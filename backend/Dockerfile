@@ -1,12 +1,4 @@
-# Image officielle Java 17
 FROM eclipse-temurin:17-jdk
-
-# Copier le jar Spring Boot
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-
-# Exposer le port
+COPY target/springboot-backend-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
-
-# Lancer l'application
 ENTRYPOINT ["java", "-jar", "/app.jar"]
